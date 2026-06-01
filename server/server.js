@@ -4,10 +4,26 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 dotenv.config();
-
 const app = express();
 
-app.use(cors());
+
+/* MIDDLEWARE */
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://ast-support-helpdesk.netlify.app/",
+      "https://helpdesk-support-system-jdch.onrender.com/",
+      "http://localhost:5001"
+
+    ],
+
+    methods: ["GET", "POST"],
+
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 
