@@ -65,7 +65,7 @@ const Register = () => {
       }
 
       else {
-        navigate("/customer");
+        navigate("/customer-dashboard");
       }
 
     }, 1000);
