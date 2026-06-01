@@ -4,11 +4,14 @@ import "./App.css";
 import Home from "./Components/Home";
 import Register from "./Components/User/Register";
 import { Toaster } from "react-hot-toast";
+import Login from "./Components/User/Login";
+import CustomerDashboard from "./Components/Dashboard/Customer/CustomerDashboard";
+import SupportDashboard from "./Components/Dashboard/Support/SupportDashboard";
 function App() {
   return (
     <>
       <Toaster
-        position="top-right"
+        position="top-center"
         toastOptions={{
           duration: 3000,
           style: {
@@ -21,6 +24,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/customer-dashboard" element={<CustomerDashboard />} />
+        <Route path="/support" element={<SupportDashboard />} />
       </Routes>
     </>
   );

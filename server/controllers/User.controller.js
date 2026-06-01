@@ -130,25 +130,95 @@ export const register = async (req, res) => {
   }
 };
 
+// export const login = async (req, res) => {
+//   try {
+//     const { email, password } = req.body;
+
+//     const user = await UserModel.findOne({ email });
+
+//     if (!user) {
+//       return res.status(400).json({
+//         message: "Invalid credentials",
+//       });
+//     }
+
+//     const isMatch = await bcrypt.compare(password, user.password);
+
+//     if (!isMatch) {
+//       return res.status(400).json({
+//         message: "Invalid credentials",
+//       });
+//     }
+
+//     const token = jwt.sign(
+//       {
+//         id: user._id,
+//         role: user.role,
+//       },
+//       process.env.JWT_SECRET,
+//       {
+//         expiresIn: "7d",
+//       }
+//     );
+
+//     res.json({
+//       success: true,
+//       token,
+//       user,
+//     });
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// };
+
 export const login = async (req, res) => {
   try {
+
     const { email, password } = req.body;
+
+    // =========================
+    // VALIDATION
+    // =========================
+
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and password are required!",
+      });
+    }
+
+    // =========================
+    // FIND USER
+    // =========================
 
     const user = await UserModel.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({
-        message: "Invalid credentials",
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email or password!",
       });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    // =========================
+    // CHECK PASSWORD
+    // =========================
+
+    const isMatch = await bcrypt.compare(
+      password,
+      user.password
+    );
 
     if (!isMatch) {
-      return res.status(400).json({
-        message: "Invalid credentials",
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email or password",
       });
     }
+
+    // =========================
+    // JWT TOKEN
+    // =========================
 
     const token = jwt.sign(
       {
@@ -161,12 +231,31 @@ export const login = async (req, res) => {
       }
     );
 
-    res.json({
+    // =========================
+    // SUCCESS RESPONSE
+    // =========================
+
+    return res.status(200).json({
       success: true,
+      message: "Login successful",
+
       token,
-      user,
+
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
     });
+
   } catch (error) {
-    res.status(500).json(error);
+
+    console.log("LOGIN ERROR:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
   }
 };

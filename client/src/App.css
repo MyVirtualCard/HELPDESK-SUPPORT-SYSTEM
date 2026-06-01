@@ -1,0 +1,27 @@
+/* CUSTOM SCROLLBAR */
+
+.custom-scrollbar::-webkit-scrollbar{
+  width:4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb{
+  background:#cecece;
+  border-radius:20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover{
+  background:#cecece;
+}
+
+
+
+/* Firefox */
+
+.custom-scrollbar{
+  scrollbar-width:thin;
+  scrollbar-color:#cecece transparent;
+}
