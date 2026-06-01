@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Headphones, ShieldCheck, Ticket, MessageCircle } from "lucide-react";
+import { Headphones, ShieldCheck, Ticket, MessageCircle, LogIn } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
 import { getMyTicketsApi } from "../api/ticketApi";
@@ -79,15 +79,17 @@ const handleLogout = () => {
         className="
         px-5
         py-2.5
-        rounded-xl
+        rounded-sm
         border
         border-cyan-400/50
         text-cyan-300
         hover:bg-cyan-400/10
         transition-all
         duration-300
+        flex place-items-center justify-center gap-3
         "
       >
+        <LogIn/>
         Login
       </Link>
 
@@ -96,7 +98,7 @@ const handleLogout = () => {
         className="
         px-5
         py-2.5
-        rounded-xl
+        rounded-sm
         bg-gradient-to-r
         from-cyan-400
         to-blue-500
@@ -107,6 +109,7 @@ const handleLogout = () => {
         duration-300
         shadow-lg
         shadow-cyan-500/30
+        hidden sm:block
         "
       >
         Get Started

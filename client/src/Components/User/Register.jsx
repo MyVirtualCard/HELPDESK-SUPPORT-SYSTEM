@@ -148,12 +148,12 @@ const Register = () => {
         </div>
 
         {/* Right Side Form */}
-        <div className="p-8 md:p-6 flex items-center justify-center">
+        <div className="p-4 sm:p-8 md:p-6 flex items-center justify-center">
           <div className="w-full ">
             <div className="text-center lg:text-left">
-              <h2 className="text-4xl font-extrabold text-white">
+              <Link to={'/'} className="text-4xl font-extrabold text-white">
                 Create Account
-              </h2>
+              </Link>
 
               <p className="text-slate-400 mt-3">
                 Register to access the helpdesk support system
