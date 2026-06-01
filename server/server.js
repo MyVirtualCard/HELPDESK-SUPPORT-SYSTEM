@@ -11,15 +11,10 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://ast-support-helpdesk.netlify.app/",
-      "https://helpdesk-support-system-jdch.onrender.com/",
-      "http://localhost:5001"
-
+      "https://ast-support-helpdesk.netlify.app",
+      "http://localhost:5173"
     ],
-
-    methods: ["GET", "POST"],
-
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
   })
 );
