@@ -103,14 +103,14 @@ const handleSubmit = async (e) => {
   }
 };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 overflow-hidden relative flex items-center justify-center sm:px-4 sm:py-10 py-0">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 overflow-hidden relative flex items-center justify-center px-2 sm:px-4 sm:py-10 py-0">
 
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-cyan-500/20 blur-3xl rounded-full animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-500/20 blur-3xl rounded-full animate-pulse"></div>
 
       {/* Main Card */}
-      <div className="w-full max-w-6xl grid lg:grid-cols-2 bg-white/5 backdrop-blur-2xl border border-white/10 sm:rounded-[40px] overflow-hidden shadow-2xl relative z-10 animate-[fadeIn_0.8s_ease] h-full">
+      <div className="w-full max-w-6xl grid lg:grid-cols-2 bg-white/5 backdrop-blur-2xl border border-white/10 sm:rounded-[40px] rounded-md overflow-hidden shadow-2xl relative z-10 animate-[fadeIn_0.8s_ease] h-full">
 
         {/* LEFT SIDE */}
         <div className="hidden lg:flex flex-col justify-between p-12 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-r border-white/10 relative overflow-hidden">

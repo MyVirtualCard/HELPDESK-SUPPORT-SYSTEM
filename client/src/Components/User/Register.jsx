@@ -79,13 +79,13 @@ const Register = () => {
   }
 };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 overflow-hidden relative flex items-center justify-center px-0 py-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 overflow-hidden relative flex items-center justify-center px-2 py-6">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-cyan-500/20 blur-3xl rounded-full animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-500/20 blur-3xl rounded-full animate-pulse"></div>
 
       {/* Main Container */}
-      <div className="w-full max-w-7xl grid lg:grid-cols-2 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[0px] overflow-hidden shadow-2xl relative z-10 animate-[fadeIn_1s_ease]">
+      <div className="w-full max-w-7xl grid lg:grid-cols-2 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-md overflow-hidden shadow-2xl relative z-10 animate-[fadeIn_1s_ease]">
         {/* Left Side */}
         <div className="hidden lg:flex flex-col justify-start p-12 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-r border-white/10 relative overflow-hidden">
           <div>
