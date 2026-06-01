@@ -216,7 +216,7 @@ const handleLogout = () => {
             collaboration in one powerful modern platform.
           </p>
 
-          <div className="mt-10 flex flex-row sm:flex-row items-center gap-5 justify-center">
+          <div className="mt-10 flex flex-row sm:flex-row items-center gap-5 justify-center sm:justify-start">
             <Link
               to="/register"
               className="px-8 py-4 rounded-sm bg-cyan-400 text-black font-bold hover:scale-105 transition-all duration-300 shadow-2xl shadow-cyan-500/40"
